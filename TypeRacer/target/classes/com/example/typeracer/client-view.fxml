@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.typeracer.ClientController">
+   <children>
+      <Label layoutX="49.0" layoutY="71.0" prefHeight="35.0" prefWidth="105.0" text="Enter IP address" />
+      <TextField fx:id="ipTextField" layoutX="204.0" layoutY="71.0" onAction="#setIpTextField" prefHeight="35.0" prefWidth="210.0" />
+      <Label fx:id="connected" layoutX="209.0" layoutY="174.0" prefHeight="50.0" prefWidth="167.0" />
+      <Button fx:id="button" layoutX="235.0" layoutY="294.0" mnemonicParsing="false" onAction="#enterMainRace" prefHeight="61.0" prefWidth="130.0" text="Enter">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
