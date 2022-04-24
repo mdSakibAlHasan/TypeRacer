@@ -2,6 +2,7 @@ package com.example.typeracer;
 
 import entryLevel.StringHandle;
 import entryLevel.TimeAndSpeed;
+import highScore.Write_object;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -75,10 +76,9 @@ public class TypingStageController implements Initializable,Runnable {
                 textField.setDisable(true);
                 finishedLabel.setText("Finished");
                 timeline.stop();
+                Write_object write_object = new Write_object();
+                write_object.writeDetails("wq",timeAndSpeed.getFinalSpeed(index));
             }
-
-            //speed.setText(timeAndSpeed.getSpeed(index));
-            //System.out.println("here " + timeAndSpeed.getSpeed(index));
 
         });
     }
@@ -108,7 +108,6 @@ public class TypingStageController implements Initializable,Runnable {
                     public void handle(ActionEvent event)
                     {
                         final Calendar cal = Calendar.getInstance();
-                       // speed.setText(format.format(cal.getTime()));
                         speed.setText(timeAndSpeed.getSpeed(index));
                     }
                 }));
@@ -139,56 +138,4 @@ public class TypingStageController implements Initializable,Runnable {
     }
 
 
-//    private void setTimeline() {
-//     System.out.println("in set time linw");
-////        timeline = new Timeline(new KeyFrame(Duration.seconds(1), event -> updateStopwatchText()));
-////        timeline.setAutoReverse(false);
-////       timeline.setCycleCount(Timeline.INDEFINITE);
-//
-//        long endTime = System.currentTimeMillis();
-//        final SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm:ss");
-//        final Timeline = new Timeline(
-//                new KeyFrame(
-//                        Duration.millis(1000),
-//                        event ->{
-//                            final long diff = endTime - System.currentTimeMillis();
-//                            if(diff<0){
-//                                timeText.setText(timeFormat.format(0));
-//                            }
-//                            else{
-//                                timeText.setText(timeFormat.format(diff));
-//                            }
-//                        }
-//                )
-//        );
-
-
-
-
- //   }
-//
-//
-//
-//    @FXML
-//    private void updateStopwatchText() {
-//        System.out.println("in set time line 2nd call");
-//        if (seconds == 60){
-//            minutes++;
-//            seconds = 0;
-//        }
-//        timeText.setText((((minutes/10) == 0) ? "0" : "") + minutes + ":"
-//                + (((seconds/10) == 0) ? "0" : "") + seconds++);
-//        System.out.println(seconds+" " +minutes+" tty "+timeText);
-//    }
-//
-//
-//    @Override
-//    public void run() {
-//         TimeAndSpeed timeAndSpeed = new TimeAndSpeed();
-//         TypingStageController typingStageController = new TypingStageController();
-//        String timeLabel = timeAndSpeed.getLebelTime(start);
-//       // typingStageController.timeText.setText("sds");
-//        finishedLabel.setText(timeLabel);
-//        //speed.setText(timeAndSpeed.getSpeed(index,start));
-//    }
 }

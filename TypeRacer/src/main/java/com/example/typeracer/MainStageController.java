@@ -49,5 +49,16 @@ public class MainStageController {
        // new GroupController();
     }
 
+    @FXML
+    public void highScoreButton(ActionEvent event) throws IOException {
+        root = FXMLLoader.load((getClass().getResource("high-score-view.fxml")));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+
+        new HighScoreController();
+    }
+
     //later add button
 }

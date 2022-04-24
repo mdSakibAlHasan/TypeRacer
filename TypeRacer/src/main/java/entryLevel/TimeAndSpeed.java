@@ -31,26 +31,14 @@ public class TimeAndSpeed {
             return str;
     }
 
-    public String getLebelTime(long start)
+ public int getFinalSpeed(int wordType)
     {
-        int second =  (int)getTotalMinute();
-        int minute = (int)(second/60F);
-        second -= (minute*60);
-        if(minute == 0){
-            if(second>9)
-                text = "00."+second;
-            else
-                text = "00.0"+second;
-        }
-        else{
-            if(second>9)
-                text = "0"+minute+"."+second;
-            else
-                text = "0"+minute+".0"+second;
-        }
-
-        return text;
+            float time = getTotalMinute();
+            float f_speed = (float)wordType/time;
+            speed = (int) f_speed;
+       return speed;
     }
+
 
 
 }

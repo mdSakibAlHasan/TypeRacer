@@ -29,7 +29,7 @@ public class ClientController {
     private DataOutputStream out     = null;
 
     private DataInputStream in       =  null;
-    // constructor to put ip address and port
+
     private Stage stage;
     private Scene scene;
     private Parent root;
@@ -102,12 +102,11 @@ public class ClientController {
 
         socket = new Socket(ip, 5321);
         conneted.setText("CONNECTED");
-       // input  = new DataInputStream(System.in);
         out    = new DataOutputStream(socket.getOutputStream());
         in = new DataInputStream(
                 new BufferedInputStream(socket.getInputStream()));
 
-       // button.setDisable(false);
+
         waitingHostStart(event,in);
 
     }
@@ -137,8 +136,6 @@ public class ClientController {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
-
 
     }
 
